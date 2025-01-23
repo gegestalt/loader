@@ -28,7 +28,7 @@ def load_chunks(url):
 
 def rebuild_file(parts):
     new_filename = tempfile.NamedTemporaryFile(delete=False,   suffix=".exe")
-    with open(new_filename.name, "wb") as f:
+    with open(new_filename.name, "wb") as fh:
         for part in parts.keys():
             filename = parts[part]
             data = open(filename, "rb").read()
